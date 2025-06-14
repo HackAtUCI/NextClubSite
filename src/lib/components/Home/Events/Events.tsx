@@ -57,8 +57,8 @@ const EventCard: React.FC<EventCardProps> = ({
 const Events: React.FC = () => {
   return (
     <section className="px-40 py-30 bg-box">
-      <div className="">
-        <h2 className="text-heading mb-4">Our Events</h2>
+      <div>
+        <h2 className="text-subtitle mb-4">Our Events</h2>
         <p className="mb-4 max-w-3xl">
           We aim to celebrate UC Irvine&apos;s spirit of innovation by
           organizing ZotHacks, a beginner friendly hackathon, and IrvineHacks,

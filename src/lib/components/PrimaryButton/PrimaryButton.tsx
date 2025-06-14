@@ -3,14 +3,14 @@ import "./PrimaryButton.css";
 
 interface PrimaryButtonProps {
   children: React.ReactNode;
-  classes?: string;
+  className?: string;
   href?: string;
   [x: string]: unknown;
 }
 
 const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   children,
-  classes = "",
+  className = "",
   href,
   ...props
 }) => {
@@ -21,7 +21,7 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({
         href={href}
         target={isExternal ? "_blank" : undefined}
         rel={isExternal ? "noreferrer" : undefined}
-        className={`primary-gradient-btn px-12 py-3 rounded-full text-button outline-none border-none shadow-none bg-transparent ${classes}`}
+        className={`primary-gradient-btn px-12 py-3 rounded-full text-button outline-none border-none shadow-none bg-transparent ${className}`}
         {...props}
       >
         {children}
@@ -30,7 +30,7 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   }
   return (
     <button
-      className={`primary-gradient-btn px-12 py-3 rounded-full text-button outline-none border-none shadow-none bg-transparent ${classes}`}
+      className={`primary-gradient-btn px-12 py-3 rounded-full text-button outline-none border-none shadow-none bg-transparent ${className}`}
       {...props}
     >
       {children}

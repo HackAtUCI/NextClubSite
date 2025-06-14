@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
       </div>
       <div className="flex flex-col items-center justify-center gap-8">
         <h1 className="text-heading">Hack at UCI</h1>
-        <PrimaryButton>Get Involved</PrimaryButton>
+        <PrimaryButton className="px-32">Get Involved</PrimaryButton>
       </div>
     </div>
   );

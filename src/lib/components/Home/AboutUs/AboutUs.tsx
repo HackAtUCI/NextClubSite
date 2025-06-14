@@ -3,8 +3,8 @@ import PrimaryAnchor from "@/lib/components/PrimaryAnchor/PrimaryAnchor";
 
 export default function AboutUs() {
   return (
-    <div className="flex justify-center items-center mt-4">
-      <Box className="w-9/10">
+    <div className="flex justify-center items-center mt-4 mb-48">
+      <Box className="w-full mx-24 px-16 py-12">
         <h2 className="text-subtitle mb-4">About Us</h2>
         <p className="mb-6">
           Hack at UCI is a student-run organization established to provide

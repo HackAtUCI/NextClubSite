@@ -1,26 +1,70 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background-dark-blue: #232332;
+  --background-darker-blue: #1f1e2d;
+
+  --font-size-header: 6rem;
+  --font-size-subtitle: 3rem;
+  --font-size-body: 1.5rem;
+
+  --font-weight-bold: 700;
+  --font-weight-semibold: 600;
+  --font-weight-regular: 400;
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --font-manrope: var(--font-manrope);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-primary: #2d2d3e;
+  --color-secondary: #eceffd;
+  --color-blue-accent: #7ea9fb;
+  --color-green-accent: #82ffb4;
+
+  --color-background-blue: var(--color-primary);
+  --color-background-dark-blue: var(--background-dark-blue);
+  --color-background-darker-blue: var(--background-darker-blue);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  color: var(--color-secondary);
+  font-family: var(--font-manrope);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.5;
+}
+
+@layer utilities {
+  .text-heading {
+    font-size: var(--font-size-header);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.1;
+  }
+
+  .text-subtitle {
+    font-size: var(--font-size-subtitle);
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.2;
+  }
+
+  .home-background {
+    background-image: linear-gradient(
+      to bottom,
+      var(--background-dark-blue) 0px,
+      var(--color-background-blue) 450px,
+      var(--background-dark-blue) 900px
+    );
+  }
+
+  .about-background {
+    background-image: linear-gradient(
+      to bottom,
+      var(--background-dark-blue) 0px,
+      var(--background-darker-blue) 900px,
+      var(--background-dark-blue) 901px
+    );
+  }
 }

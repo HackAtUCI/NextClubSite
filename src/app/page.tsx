@@ -1,7 +1,7 @@
 export default function Home() {
   return (
-    <div>
-      <main>{/* Your content here */}</main>
+    <div className="home-background h-screen">
+      <main></main>
     </div>
   );
 }

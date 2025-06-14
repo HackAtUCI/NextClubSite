@@ -24,6 +24,7 @@
   --color-blue-accent: #7ea9fb;
   --color-green-accent: #82ffb4;
 
+  --color-box: #232332;
   --color-background-blue: var(--color-primary);
   --color-background-dark-blue: var(--background-dark-blue);
   --color-background-darker-blue: var(--background-darker-blue);

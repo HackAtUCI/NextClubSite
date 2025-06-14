@@ -7,6 +7,7 @@
   --font-size-header: 6rem;
   --font-size-subtitle: 3rem;
   --font-size-body: 1.5rem;
+  --font-size-button: 2.25rem;
 
   --font-weight-bold: 700;
   --font-weight-semibold: 600;
@@ -19,10 +20,11 @@
   --font-manrope: var(--font-manrope);
 
   --color-primary: #2d2d3e;
-  --color-secondary: #eceffd;
+  --color-secondary: #ffffff;
   --color-blue-accent: #7ea9fb;
   --color-green-accent: #82ffb4;
 
+  --color-box: #232332;
   --color-background-blue: var(--color-primary);
   --color-background-dark-blue: var(--background-dark-blue);
   --color-background-darker-blue: var(--background-darker-blue);
@@ -50,6 +52,11 @@ body {
     line-height: 1.2;
   }
 
+  .text-button {
+    font-size: var(--font-size-button);
+    font-weight: var(--font-weight-semibold);
+  }
+
   .home-background {
     background-image: linear-gradient(
       to bottom,
@@ -67,4 +74,8 @@ body {
       var(--background-dark-blue) 901px
     );
   }
+}
+
+.shadow-box-glow {
+  box-shadow: 0 0 32px 0 #7ea9fb33, 0 0 0 1px #7ea9fb22;
 }

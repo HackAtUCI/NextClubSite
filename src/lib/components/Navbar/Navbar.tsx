@@ -11,7 +11,7 @@ const navLinks = [
   { href: "/contact", label: "Contact Us" },
 ];
 
-const Navbar: React.FC = () => {
+export default function Navbar() {
   return (
     <nav className="w-full flex items-center justify-between pr-16 pl-8 py-4 absolute">
       <div className="flex items-center">
@@ -38,6 +38,4 @@ const Navbar: React.FC = () => {
       </div>
     </nav>
   );
-};
-
-export default Navbar;
+}

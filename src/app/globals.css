@@ -1,9 +1,6 @@
 @import "tailwindcss";
 
 :root {
-  --background-dark-blue: #232332;
-  --background-darker-blue: #1f1e2d;
-
   --font-size-header: 6rem;
   --font-size-subtitle: 3rem;
   --font-size-body: 1.5rem;
@@ -25,9 +22,9 @@
   --color-green-accent: #82ffb4;
 
   --color-box: #2c2c3c;
-  --color-background-blue: var(--color-primary);
-  --color-background-dark-blue: var(--background-dark-blue);
-  --color-background-darker-blue: var(--background-darker-blue);
+  --color-blue: var(--color-primary);
+  --color-dark-blue: #232332;
+  --color-darker-blue: #1f1e2d;
 }
 
 body {
@@ -60,18 +57,18 @@ body {
   .home-background {
     background-image: linear-gradient(
       to bottom,
-      var(--background-dark-blue) 0px,
-      var(--color-background-blue) 450px,
-      var(--background-dark-blue) 900px
+      var(--color-dark-blue) 0px,
+      var(--color-blue) 450px,
+      var(--color-dark-blue) 900px
     );
   }
 
   .about-background {
     background-image: linear-gradient(
       to bottom,
-      var(--background-dark-blue) 0px,
-      var(--background-darker-blue) 900px,
-      var(--background-dark-blue) 901px
+      var(--color-dark-blue) 0px,
+      var(--color-darker-blue) 900px,
+      var(--color-dark-blue) 901px
     );
   }
 }

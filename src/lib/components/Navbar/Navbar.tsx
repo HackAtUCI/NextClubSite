@@ -17,11 +17,11 @@ const Navbar: React.FC = () => {
       <div className="flex items-center">
         <Link href="/">
           <Image
-            src={HackLogo.src}
+            src={HackLogo}
             alt="Hack at UCI Logo"
             width={60}
             height={60}
-            style={{ cursor: "pointer" }}
+            className="cursor-pointer"
           />
         </Link>
       </div>

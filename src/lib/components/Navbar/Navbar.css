@@ -1,0 +1,24 @@
+.navMenuLink {
+  position: relative;
+  font-size: 1.25rem;
+  font-weight: 500;
+  padding-bottom: 0.25rem;
+  text-decoration: none;
+}
+
+.navMenuLink::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: white;
+  transition: width 0.25s ease;
+}
+
+.navMenuLink:hover::before,
+.navMenuLink:focus::before,
+.navMenuLink:active::before {
+  width: 100%;
+}

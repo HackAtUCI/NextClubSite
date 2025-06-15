@@ -13,7 +13,7 @@ const navLinks = [
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="w-full flex items-center justify-between px-16 py-4 absolute">
+    <nav className="w-full flex items-center justify-between pr-16 pl-8 py-4 absolute">
       <div className="flex items-center">
         <Link href="/">
           <Image

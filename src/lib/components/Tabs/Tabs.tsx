@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Box from "@/lib/components/Box/Box";
 
+import "./Tabs.css";
+
 export interface TabInterface {
   buttonText:
     | "Corporate"
@@ -10,7 +12,7 @@ export interface TabInterface {
     | "Marketing"
     | "Graphics"
     | "Technology";
-  tabText: React.ReactNode;
+  tabTextComponent: React.ReactNode;
 }
 
 interface TabsInterface {
@@ -18,18 +20,27 @@ interface TabsInterface {
 }
 
 export default function Tabs({ tabs }: TabsInterface) {
-  const [tabText, setTabText] = useState<React.ReactNode>();
+  const [activeTab, setActiveTab] = useState<TabInterface | undefined>(tabs[0]);
 
   return (
     <div>
-      <div>
+      <div className="flex justify-center items-center my-12">
         {tabs.map((tab: TabInterface) => (
-          <button key={tab.buttonText} onClick={() => setTabText(tab.tabText)}>
+          <button
+            key={tab.buttonText}
+            onClick={() => setActiveTab(tab)}
+            className={`tab-button ${
+              activeTab?.buttonText === tab.buttonText ? "active" : ""
+            }`}
+          >
             {tab.buttonText}
           </button>
         ))}
       </div>
-      <Box>{tabText}</Box>
+      <Box className="pt-18">
+        <h3 className="text-subtitle mb-8">{activeTab?.buttonText}</h3>
+        {activeTab?.tabTextComponent}
+      </Box>
     </div>
   );
 }

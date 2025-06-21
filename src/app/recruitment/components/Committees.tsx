@@ -8,30 +8,30 @@ import TechnologyText from "./committee-texts/TechnologyText";
 const committeeTabs: TabInterface[] = [
   {
     buttonText: "Corporate",
-    tabText: <CorporateText />,
+    tabTextComponent: <CorporateText />,
   },
   {
     buttonText: "Logistics",
-    tabText: <LogisticsText />,
+    tabTextComponent: <LogisticsText />,
   },
   {
     buttonText: "Marketing",
-    tabText: <MarketingText />,
+    tabTextComponent: <MarketingText />,
   },
   {
     buttonText: "Graphics",
-    tabText: <GraphicsText />,
+    tabTextComponent: <GraphicsText />,
   },
   {
     buttonText: "Technology",
-    tabText: <TechnologyText />,
+    tabTextComponent: <TechnologyText />,
   },
 ];
 
 export default function Committees() {
   return (
     <section>
-      <h2 className="text-subtitle">Our Committees</h2>
+      <h2 className="text-subtitle text-center">Our Committees</h2>
       <Tabs tabs={committeeTabs} />
     </section>
   );

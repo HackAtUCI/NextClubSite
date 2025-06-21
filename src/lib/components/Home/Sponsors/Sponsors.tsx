@@ -1,7 +1,13 @@
 import PrimaryAnchor from "@/lib/components/PrimaryAnchor/PrimaryAnchor";
 import Box from "@/lib/components/Box/Box";
+import Image from "next/image";
 
-const sponsors = [
+interface Sponsor {
+  src: string;
+  size: string;
+}
+
+const sponsors: Sponsor[] = [
   { src: "google.svg", size: "w-[25rem]" },
   { src: "meta.svg", size: "w-[25rem]" },
   { src: "microsoft.svg", size: "w-[25rem]" },
@@ -75,18 +81,20 @@ export default function Sponsors() {
             experience for everyone who attends.
           </p>
           <PrimaryAnchor href="/">More Information</PrimaryAnchor>
-          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 mt-10 px-10 py-12 border bg-[#ECEFFD] rounded-[20px] ">
-          {sponsors.map((sponsor, idx) => {
-            return (
-              <img
-                key={idx}
-                src={`sponsors/${sponsor.src}`}
-                alt={`Sponsor ${idx + 1}`}
-                className={`mx-auto ${sponsor.size}`}
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-6 mt-10 px-10 py-12 border bg-[#ECEFFD] rounded-[20px] ">
+            {sponsors.map((sponsor, idx) => {
+              return (
+                <Image
+                  key={idx}
+                  src={`sponsors/${sponsor.src}`}
+                  alt={`Sponsor ${idx + 1}`}
+                  width="10"
+                  height="10"
+                  className={`mx-auto ${sponsor.size}`}
                 />
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
         </Box>
       </div>
     </section>

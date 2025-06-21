@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 import Box from "@/lib/components/Box/Box";
-import PrimaryButton from "../PrimaryButton/PrimaryButton";
+// import PrimaryButton from "../PrimaryButton/PrimaryButton";
 
 import "./Tabs.css";
 
@@ -45,9 +45,9 @@ export default function Tabs({ tabs }: TabsInterface) {
           {activeTab?.tabTextComponent}
         </Box>
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
-          <PrimaryButton className="px-[10rem]" variant="apply">
+          {/* <PrimaryButton className="px-[10rem]" variant="apply">
             Apply
-          </PrimaryButton>
+          </PrimaryButton> */}
         </div>
       </div>
     </div>

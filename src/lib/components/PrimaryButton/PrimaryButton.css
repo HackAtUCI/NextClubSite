@@ -9,3 +9,8 @@
   cursor: pointer;
   background-position: right;
 }
+
+.primary-gradient-btn.apply-style {
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 24px 0 #ffffff;
+}

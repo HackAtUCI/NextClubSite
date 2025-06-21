@@ -4,6 +4,7 @@ import { useState } from "react";
 import Box from "@/lib/components/Box/Box";
 
 import "./Tabs.css";
+import PrimaryButton from "../PrimaryButton/PrimaryButton";
 
 export interface TabInterface {
   buttonText:
@@ -37,10 +38,15 @@ export default function Tabs({ tabs }: TabsInterface) {
           </button>
         ))}
       </div>
-      <Box className="pt-18">
-        <h3 className="text-subtitle mb-8">{activeTab?.buttonText}</h3>
-        {activeTab?.tabTextComponent}
-      </Box>
+      <div className="relative">
+        <Box className="pt-18 pb-24">
+          <h3 className="text-subtitle mb-8">{activeTab?.buttonText}</h3>
+          {activeTab?.tabTextComponent}
+        </Box>
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
+          <PrimaryButton className="px-[10rem]" variant="apply">Apply</PrimaryButton>
+        </div>
+      </div>
     </div>
   );
 }

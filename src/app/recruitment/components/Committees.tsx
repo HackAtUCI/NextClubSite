@@ -30,7 +30,7 @@ const committeeTabs: TabInterface[] = [
 
 export default function Committees() {
   return (
-    <section>
+    <section className="py-30">
       <h2 className="text-subtitle text-center">Our Committees</h2>
       <Tabs tabs={committeeTabs} />
     </section>

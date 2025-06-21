@@ -5,6 +5,7 @@ interface PrimaryButtonProps {
   children: React.ReactNode;
   className?: string;
   href?: string;
+  variant?: "default" | "apply";
   [x: string]: unknown;
 }
 
@@ -12,16 +13,21 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   children,
   className = "",
   href,
+  variant = "default",
   ...props
 }) => {
+  const isExternal = href?.startsWith("http");
+  const buttonClasses = `primary-gradient-btn px-12 py-3 rounded-full text-button outline-none border-none shadow-none bg-transparent ${className} ${
+    variant === "apply" ? "apply-style" : ""
+  }`;
+
   if (href) {
-    const isExternal = href.startsWith("http");
     return (
       <a
         href={href}
         target={isExternal ? "_blank" : undefined}
         rel={isExternal ? "noreferrer" : undefined}
-        className={`primary-gradient-btn px-12 py-3 rounded-full text-button outline-none border-none shadow-none bg-transparent ${className}`}
+        className={buttonClasses}
         {...props}
       >
         {children}
@@ -29,10 +35,7 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({
     );
   }
   return (
-    <button
-      className={`primary-gradient-btn px-12 py-3 rounded-full text-button outline-none border-none shadow-none bg-transparent ${className}`}
-      {...props}
-    >
+    <button className={buttonClasses} {...props}>
       {children}
     </button>
   );

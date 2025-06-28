@@ -4,31 +4,32 @@ import { Manrope } from "next/font/google";
 import Navbar from "@/lib/components/Navbar/Navbar";
 import Footer from "@/lib/components/Footer/Footer";
 
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
 
 const manrope = Manrope({
-  subsets: ["latin"],
-  variable: "--font-manrope",
-  display: "swap",
+    subsets: ["latin"],
+    variable: "--font-manrope",
+    display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Hack at UCI Club Site",
-  description: "Hack at UCI Club Site",
+    title: "Hack at UCI Club Site",
+    description: "Hack at UCI Club Site",
 };
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body className={`${manrope.variable} antialiased bg-dark-blue`}>
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
-    </html>
-  );
+    return (
+        <html lang="en">
+            <body className={`${manrope.variable} bg-dark-blue antialiased`}>
+                <Navbar />
+                {children}
+                <Footer />
+            </body>
+        </html>
+    );
 }

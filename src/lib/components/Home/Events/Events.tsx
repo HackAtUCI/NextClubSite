@@ -23,11 +23,13 @@ const EventCard: React.FC<EventCardProps> = ({
 }) => {
   return (
     <div
-      className={`flex w-full ${isReversed ? "flex-row-reverse" : ""} mt-30`}
+      className={`flex w-full flex-col lg:flex-row ${
+        isReversed ? "lg:flex-row-reverse" : ""
+      } mt-30`}
     >
       <div
-        className={`w-1/2 flex items-center justify-center ${
-          isReversed ? "ml-20" : "mr-20"
+        className={`w-full lg:w-1/2 flex items-center justify-center ${
+          isReversed ? "lg:ml-20" : "lg:mr-20"
         }`}
       >
         <Image
@@ -35,11 +37,13 @@ const EventCard: React.FC<EventCardProps> = ({
           alt={alt}
           width={450}
           height={450}
-          className="w-full h-auto rounded-md"
+          className="w-full h-auto max-h-[400px] rounded-md"
         />
       </div>
       <div
-        className={`w-1/2 flex flex-col mt-8 ${isReversed ? "text-right" : ""}`}
+        className={`w-full lg:w-1/2 flex flex-col mt-8 ${
+          isReversed ? "lg:text-right" : ""
+        }`}
       >
         <h3
           className={`text-subtitle font-bold mb-2 ${
@@ -56,7 +60,7 @@ const EventCard: React.FC<EventCardProps> = ({
 
 const Events: React.FC = () => {
   return (
-    <section className="px-40 py-30 bg-box">
+    <section className="px-14 py-30 md:px-40 md:py-30 bg-box">
       <div>
         <h2 className="text-subtitle mb-4">Our Events</h2>
         <p className="mb-4 max-w-3xl">

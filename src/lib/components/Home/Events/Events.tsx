@@ -60,7 +60,7 @@ const EventCard: React.FC<EventCardProps> = ({
 
 const Events: React.FC = () => {
   return (
-    <section className="px-40 py-30 bg-box">
+    <section className="p-14 md:px-40 md:py-30 bg-box">
       <div>
         <h2 className="text-subtitle mb-4">Our Events</h2>
         <p className="mb-4 max-w-3xl">

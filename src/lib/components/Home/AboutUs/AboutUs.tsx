@@ -3,7 +3,7 @@ import PrimaryAnchor from "@/lib/components/PrimaryAnchor/PrimaryAnchor";
 
 export default function AboutUs() {
   return (
-    <div className="flex justify-center items-center mt-4 mb-48">
+    <div className="flex justify-center items-center mt-4 mb-30 md:mb-48">
       <Box>
         <h2 className="text-subtitle mb-4">About Us</h2>
         <p className="mb-6">

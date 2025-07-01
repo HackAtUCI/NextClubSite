@@ -5,7 +5,7 @@ import * as NavMenu from "@radix-ui/react-navigation-menu";
 import "./Navbar.css";
 
 const NavLinkItem = React.forwardRef<
-    React.ElementRef<typeof NavMenu.Link>,
+    HTMLAnchorElement,
     React.ComponentPropsWithoutRef<typeof NavMenu.Link>
 >(({ children, className, href, ...props }, forwardedRef) => {
     return (

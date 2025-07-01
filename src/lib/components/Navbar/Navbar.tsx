@@ -11,6 +11,22 @@ import NavLinkItem from "./NavLinkItem";
 
 import "./Navbar.css";
 
+const HamburgerMenu = ({ handleClick }: { handleClick: () => void }) => {
+    return (
+        <button
+            type="button"
+            className="ml-auto h-auto cursor-pointer md:hidden"
+            onClick={handleClick}
+        >
+            <Image
+                src={hamburger}
+                width="40"
+                alt="Mobile hamburger menu"
+            />
+        </button>
+    );
+};
+
 export default function BaseNavbar({ children }: PropsWithChildren) {
     const [listShown, setListShown] = useState(false);
     const [hidden, setHidden] = useState(true);
@@ -25,32 +41,23 @@ export default function BaseNavbar({ children }: PropsWithChildren) {
         >
             <NavMenu.List className="flex bg-black bg-black/50 p-3 md:bg-black/0">
                 <NavLinkItem href="/">
-                    <div className="logo">
-                        <Image
-                            src={HackLogo}
-                            alt="Hack at UCI Logo"
-                            fill
-                        />
-                    </div>
+                    <Image
+                        src={HackLogo}
+                        alt="Hack at UCI Logo"
+                        width={40}
+                        height={40}
+                    />
                 </NavLinkItem>
-                <button
-                    type="button"
-                    className="ml-auto h-auto cursor-pointer md:hidden"
-                    onClick={() => {
+                <HamburgerMenu
+                    handleClick={() => {
                         setListShown((listShown) => !listShown);
                         setHidden(false);
                     }}
-                >
-                    <Image
-                        src={hamburger}
-                        width="40"
-                        alt="Mobile hamburger menu"
-                    />
-                </button>
+                />
             </NavMenu.List>
-            <div className="navMenuListWrapper inline-block md:my-3 md:mr-3 md:ml-auto md:flex md:items-center">
+            <div className="navMenuListWrapper inline-block md:my-3 md:ml-auto md:flex md:items-center">
                 <NavMenu.List
-                    className={`${hidden ? "opacity-0" : "opacity-100"} ${listShown ? "" : "-translate-y-full"} font-display gap-10 bg-black bg-black/50 p-5 pt-3 transition-transform duration-500 ease-in-out md:flex md:translate-y-0 md:items-center md:bg-black/0 md:p-0 md:opacity-100 md:transition-none [&>*]:mb-5 [&>*]:md:mb-0`}
+                    className={`${hidden ? "opacity-0" : "opacity-100"} ${listShown ? "" : "-translate-y-full"} font-display gap-10 bg-black bg-black/50 p-5 pt-3 transition-transform duration-500 ease-in-out md:flex md:translate-y-0 md:items-center md:gap-0 md:bg-black/0 md:p-0 md:opacity-100 md:transition-none [&>*]:mr-10 [&>*]:mb-5 [&>*]:md:mb-0`}
                     onTransitionEnd={() => setHidden(!listShown)}
                 >
                     <NavLinkItem href="/about">About</NavLinkItem>

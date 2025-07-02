@@ -36,7 +36,7 @@ export default function Footer() {
                             <React.Fragment key={link.href}>
                                 <Link
                                     href={link.href}
-                                    className="text-white no-underline! hover:underline!"
+                                    className="text-center text-white hover:underline"
                                 >
                                     {link.label}
                                 </Link>

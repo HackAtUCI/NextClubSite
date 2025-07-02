@@ -11,38 +11,36 @@ export interface TabInterface {
 
 interface TabsInterface {
     tabs: TabInterface[];
-    useGradientButton?: boolean;
+    useAltButton?: boolean;
 }
 
-export default function Tabs({
-    tabs,
-    useGradientButton = false,
-}: TabsInterface) {
+export default function Tabs({ tabs, useAltButton = false }: TabsInterface) {
     const [activeTab, setActiveTab] = useState<TabInterface | undefined>(
         tabs[0]
     );
 
-    const getButtonClassName = (isActive: boolean) => {
-        if (useGradientButton) {
-            return `tab-btn-gradient ${isActive ? "active" : ""}`;
-        }
-        return `tab-button ${isActive ? "active" : ""}`;
-    };
-
     return (
         <div>
             <div className="my-12 flex items-center justify-center">
-                {tabs.map((tab: TabInterface) => (
-                    <button
-                        key={tab.buttonText}
-                        onClick={() => setActiveTab(tab)}
-                        className={getButtonClassName(
-                            activeTab?.buttonText === tab.buttonText
-                        )}
-                    >
-                        {tab.buttonText}
-                    </button>
-                ))}
+                {tabs.map((tab: TabInterface) =>
+                    useAltButton ? (
+                        <a
+                            key={tab.buttonText}
+                            onClick={() => setActiveTab(tab)}
+                            className={`anchor-color text-4xl ${activeTab?.buttonText === tab.buttonText ? "active" : ""} `}
+                        >
+                            {tab.buttonText}
+                        </a>
+                    ) : (
+                        <button
+                            key={tab.buttonText}
+                            onClick={() => setActiveTab(tab)}
+                            className={`tab-button ${activeTab?.buttonText === tab.buttonText ? "active" : ""} `}
+                        >
+                            {tab.buttonText}
+                        </button>
+                    )
+                )}
             </div>
             <div className="relative">{activeTab?.tabComponent}</div>
         </div>

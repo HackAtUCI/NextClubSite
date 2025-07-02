@@ -17,14 +17,13 @@
     box-shadow: 0 0 24px 0 #82ffb499;
 }
 
-.tab-btn-gradient {
-    background: linear-gradient(90deg, #7ea9fb 0%, #82ffb4 50%, #7ea9fb 100%);
-    background-size: 200% 100%;
-    background-position: left;
-    transition: background-position 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+.anchor-color {
+    cursor: pointer;
+    margin: 0 4rem;
+    color: #7ea9fb;
+    transition: all 0.2s ease-in-out;
 }
 
-.tab-btn-gradient:hover {
-    cursor: pointer;
-    background-position: right;
+.anchor-color.active {
+    color: #82ffb4;
 }

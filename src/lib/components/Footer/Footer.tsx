@@ -17,8 +17,8 @@ const navLinks = [
 
 export default function Footer() {
     return (
-        <footer className="footer-container px-24 py-10">
-            <div className="flex flex-col justify-center gap-6 lg:flex-row lg:gap-10">
+        <footer className="footer-container w-full px-4 pt-8 pb-10 md:px-24 md:py-10">
+            <div className="flex flex-col justify-center gap-0 lg:flex-row lg:gap-10">
                 <Link
                     href="/"
                     className="flex justify-center lg:justify-start"
@@ -26,12 +26,10 @@ export default function Footer() {
                     <Image
                         src={HackLogo}
                         alt="Hack at UCI Logo"
-                        width={100}
-                        height={100}
-                        className="h-16 w-16 cursor-pointer lg:h-[100px] lg:w-[100px]"
+                        className="h-12 w-12 cursor-pointer md:h-24 md:w-24"
                     />
                 </Link>
-                <div className="flex grow flex-col items-center gap-0 lg:items-start lg:gap-4">
+                <div className="flex grow flex-col items-center gap-2 lg:items-start lg:gap-4">
                     <p className="text-subtitle">Hack at UCI</p>
                     <div className="flex items-center gap-6">
                         {navLinks.map((link, index) => (
@@ -47,35 +45,27 @@ export default function Footer() {
                         ))}
                     </div>
                 </div>
-                <div className="flex justify-center lg:items-start lg:justify-end">
+                <div className="mt-4 flex justify-center lg:mt-0 lg:items-start lg:justify-end">
                     <div className="flex justify-between gap-8">
                         <Image
                             src={InstagramLogo}
                             alt="Instagram Logo"
-                            width={60}
-                            height={60}
-                            className="cursor-pointer"
+                            className="h-8 w-8 cursor-pointer md:h-15 md:w-15"
                         />
                         <Image
                             src={TiktokLogo}
                             alt="Tiktok Logo"
-                            width={60}
-                            height={60}
-                            className="cursor-pointer"
+                            className="h-8 w-8 cursor-pointer md:h-15 md:w-15"
                         />
                         <Image
                             src={DiscordLogo}
                             alt="Discord Logo"
-                            width={60}
-                            height={60}
-                            className="cursor-pointer"
+                            className="h-8 w-8 cursor-pointer md:h-15 md:w-15"
                         />
                         <Image
                             src={MailIcon}
                             alt="Mail icon"
-                            width={60}
-                            height={60}
-                            className="cursor-pointer"
+                            className="h-8 w-8 cursor-pointer md:h-15 md:w-15"
                         />
                     </div>
                 </div>

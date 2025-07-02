@@ -7,7 +7,17 @@ import MarketingText from "./committee-texts/MarketingText";
 import GraphicsText from "./committee-texts/GraphicsText";
 import TechnologyText from "./committee-texts/TechnologyText";
 
-const committeeTabs: TabInterface[] = [
+// Extend TabInterface to restrict buttonText to specific committee names
+interface CommitteeTabInterface extends Omit<TabInterface, "buttonText"> {
+    buttonText:
+        | "Corporate"
+        | "Logistics"
+        | "Marketing"
+        | "Graphics"
+        | "Technology";
+}
+
+const committeeTabs: CommitteeTabInterface[] = [
     {
         buttonText: "Corporate",
         tabComponent: (

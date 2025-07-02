@@ -1,67 +1,73 @@
 "use client";
 
-import Link from "next/link";
+import { useState, PropsWithChildren } from "react";
 import Image from "next/image";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
+import * as NavMenu from "@radix-ui/react-navigation-menu";
+
 import HackLogo from "@/assets/logos/hack_navbar.svg";
+import hamburger from "@/assets/icons/navigation-icon.svg";
 import useScrollFromTop from "@/lib/hooks/useScrollFromTop";
+import NavLinkItem from "./NavLinkItem";
 
 import "./Navbar.css";
 
-const navLinks = [
-    { href: "/about", label: "About" },
-    { href: "/events", label: "Events" },
-    { href: "/recruitment", label: "Recruitment" },
-    { href: "/contact", label: "Contact Us" },
-];
+const HamburgerMenu = ({ handleClick }: { handleClick: () => void }) => {
+    return (
+        <button
+            type="button"
+            className="ml-auto h-auto cursor-pointer md:hidden"
+            onClick={handleClick}
+        >
+            <Image
+                src={hamburger}
+                width="40"
+                alt="Mobile hamburger menu"
+            />
+        </button>
+    );
+};
 
-export default function NavBar() {
+export default function BaseNavbar({ children }: PropsWithChildren) {
+    const [listShown, setListShown] = useState(false);
+    const [hidden, setHidden] = useState(true);
+
     const hasScrolledFromTop = useScrollFromTop();
 
     return (
-        <div
-            className={`nav-container ${hasScrolledFromTop ? "" : "bg-no-scroll"}`}
+        <NavMenu.Root
+            className={`${hasScrolledFromTop ? "md:bg-black/50" : ""} ${
+                hidden ? "max-md:h-[4rem] max-md:overflow-hidden" : ""
+            } fixed z-50 flex w-full flex-col bg-black bg-black/0 transition-colors duration-0 ease-out md:flex-row md:items-center md:duration-700`}
         >
-            <Navbar
-                variant="dark"
-                expand="lg"
-                className="navbar-style"
-            >
-                <Container fluid>
-                    <Navbar.Brand
-                        href="/"
-                        as={Link}
-                        className="logoBrand pl-4"
-                    >
-                        <div className="logo">
-                            <Image
-                                src={HackLogo}
-                                alt="Hack at UCI Logo"
-                                fill
-                            />
-                        </div>
-                    </Navbar.Brand>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse
-                        id="basic-navbar-nav"
-                        className="pr-6"
-                    >
-                        <Nav className="ms-auto">
-                            {navLinks.map((link) => (
-                                <Link
-                                    key={link.href}
-                                    href={link.href}
-                                    className="navlink"
-                                >
-                                    {link.label}
-                                </Link>
-                            ))}
-                        </Nav>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>
-        </div>
+            <NavMenu.List className="flex bg-black bg-black/50 p-3 md:bg-black/0">
+                <NavLinkItem href="/">
+                    <Image
+                        src={HackLogo}
+                        alt="Hack at UCI Logo"
+                        width={40}
+                        height={40}
+                    />
+                </NavLinkItem>
+                <HamburgerMenu
+                    handleClick={() => {
+                        setListShown((listShown) => !listShown);
+                        setHidden(false);
+                    }}
+                />
+            </NavMenu.List>
+            <div className="navMenuListWrapper inline-block md:my-3 md:ml-auto md:flex md:items-center">
+                <NavMenu.List
+                    className={`${hidden ? "opacity-0" : "opacity-100"} ${listShown ? "" : "-translate-y-full"} font-display gap-10 bg-black bg-black/50 p-5 pt-3 transition-transform duration-500 ease-in-out md:flex md:translate-y-0 md:items-center md:gap-0 md:bg-black/0 md:p-0 md:opacity-100 md:transition-none [&>*]:mr-10 [&>*]:mb-5 [&>*]:md:mb-0`}
+                    onTransitionEnd={() => setHidden(!listShown)}
+                >
+                    <NavLinkItem href="/about">About</NavLinkItem>
+                    <NavLinkItem href="/events">Events</NavLinkItem>
+                    <NavLinkItem href="/recruitment">Recruitment</NavLinkItem>
+                    <NavLinkItem href="/contact">Contact Us</NavLinkItem>
+
+                    {children}
+                </NavMenu.List>
+            </div>
+        </NavMenu.Root>
     );
 }

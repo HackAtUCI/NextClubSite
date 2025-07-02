@@ -4,7 +4,6 @@ import { Manrope } from "next/font/google";
 import Navbar from "@/lib/components/Navbar/Navbar";
 import Footer from "@/lib/components/Footer/Footer";
 
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
 
 const manrope = Manrope({

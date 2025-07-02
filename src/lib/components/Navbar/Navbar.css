@@ -1,82 +1,23 @@
-.nav-container {
-    width: 100%;
-    z-index: 101;
-    backdrop-filter: blur(7px);
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: rgba(20, 20, 30, 0.85);
-    transition: background-color 0.2s ease;
-}
-
-@media (min-width: 992px) {
-    .bg-no-scroll {
-        background-color: transparent !important;
+@media (max-width: 768px) {
+    .navMenuListWrapper {
+        clip-path: inset(0px 0px -100px -100px);
     }
 }
 
-.navbar-style {
-    position: relative;
-    padding-left: 2rem;
-    padding-right: 4rem;
-    min-height: 70px;
-    background: transparent !important;
+.navMenuLink {
+    font-size: 24px;
+
+    padding-bottom: 0.5rem;
+
+    background-image: linear-gradient(white, white);
+    background-repeat: no-repeat;
+    background-position-y: 34px;
+    background-size: 0% 2px;
+    transition: background-size 0.25s ease;
 }
 
-.logoBrand {
-    display: flex;
-    align-items: center;
-    margin-right: 2rem;
-}
-
-.logo {
-    position: relative;
-    width: 36px;
-    height: 36px;
-}
-
-.navlink {
-    position: relative;
-    color: #fff;
-    font-size: 1.25rem;
-    font-weight: 500;
-    margin-left: 2.5rem;
-    text-decoration: none;
-    padding-bottom: 2px;
-    transition: text-shadow 0.2s;
-    line-height: 34px;
-    display: inline-block;
-}
-
-.navlink::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 2px;
-    width: 0;
-    background: white;
-    transition: width 0.25s ease;
-}
-
-.navlink:hover::before,
-.navlink:focus::before,
-.navlink:active::before {
-    width: 100%;
-}
-
-@media (max-width: 991px) {
-    .navbar {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-    .navlink {
-        margin-left: 1rem;
-        font-size: 1rem;
-        line-height: 2.5rem;
-    }
-    .logo {
-        width: 40px;
-        height: 40px;
-    }
+.navMenuLink:hover,
+.navMenuLink:focus,
+.navMenuLink:active {
+    background-size: 100% 2px;
 }

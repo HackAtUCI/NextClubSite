@@ -17,4 +17,18 @@ const Box: React.FC<BoxProps> = ({ children, className = "", alt }) => {
     );
 };
 
+export const UnspacedBox: React.FC<BoxProps> = ({
+    children,
+    className = "",
+    alt,
+}) => {
+    return (
+        <div
+            className={`${alt ? "box-style bg-[#232332]" : "bg-box shadow-box-glow"} rounded-3xl ${className}`}
+        >
+            {children}
+        </div>
+    );
+};
+
 export default Box;

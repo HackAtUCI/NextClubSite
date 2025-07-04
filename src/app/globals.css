@@ -80,25 +80,6 @@ body {
         0 0 0 1px #7ea9fb22;
 }
 
-.box-style {
-    position: relative;
-    margin: 5em;
-}
-
-.box-style:before {
-    position: absolute;
-    content: "";
-    width: 102%;
-    height: 110%;
-    left: -1%;
-    top: -5%;
-    background-image: -webkit-linear-gradient(to bottom, #82ffb4, #7ea9fb);
-    background-image: linear-gradient(to bottom, #82ffb4, #7ea9fb);
-
-    z-index: -1;
-    border-radius: var(--radius-4xl);
-}
-
 @media (min-width: 768px) {
     body {
         font-size: var(--font-size-body);

@@ -1,5 +1,8 @@
-import Tabs, { TabInterface } from "@/lib/components/Tabs/Tabs";
+"use client";
 
+import Tabs, { TabInterface } from "@/lib/components/Tabs/Tabs";
+import IrvineHacksTab from "./IrvineHacksTab";
+import ZotHacksTab from "./ZotHacksTab";
 interface HackathonTabInterface extends Omit<TabInterface, "buttonText"> {
     buttonText: "IrvineHacks" | "ZotHacks";
 }
@@ -7,11 +10,11 @@ interface HackathonTabInterface extends Omit<TabInterface, "buttonText"> {
 const hackathonTabs: HackathonTabInterface[] = [
     {
         buttonText: "IrvineHacks",
-        tabComponent: <></>,
+        tabComponent: <IrvineHacksTab />,
     },
     {
         buttonText: "ZotHacks",
-        tabComponent: <></>,
+        tabComponent: <ZotHacksTab />,
     },
 ];
 

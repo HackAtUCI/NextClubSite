@@ -62,13 +62,13 @@ const Carousel: React.FC<CarouselProps> = ({
     return (
         <div className={`embla ${className}`}>
             <div
-                className="embla__viewport"
+                className="embla__viewport shadow-box-glow"
                 ref={emblaRef}
             >
                 <div className="embla__container">
                     {React.Children.map(children, (child, idx) => (
                         <div
-                            className="embla__slide"
+                            className="embla__slide rounded-2xl [&>*]:rounded-2xl"
                             key={idx}
                         >
                             {child}

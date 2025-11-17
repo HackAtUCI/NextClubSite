@@ -9,7 +9,7 @@
     position: absolute;
     content: "";
     z-index: -1;
-    border-radius: var(--radius-4xl);
+    border-radius: var(--radius-3xl);
 
     width: calc(100% + var(--border-width));
     height: calc(100% + var(--border-width));

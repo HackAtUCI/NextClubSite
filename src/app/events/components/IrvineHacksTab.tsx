@@ -26,17 +26,17 @@ export default function IrvineHacksTab() {
                         <Image
                             src={IrvineHacksImg}
                             alt="IrvineHacks"
-                            className="w-full rounded-2xl"
+                            className="w-full"
                         />
                         <Image
                             src={ZotHacksImg}
                             alt="ZotHacks"
-                            className="w-full rounded-2xl"
+                            className="w-full"
                         />
                         <Image
                             src={ZotHacksImg}
                             alt="ZotHacks"
-                            className="w-full rounded-2xl"
+                            className="w-full"
                         />
                     </Carousel>
                 </div>
